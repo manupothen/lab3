@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo
+  namespace: lab3
   labels:
     app.kubernetes.io/name: mongo
     app.kubernetes.io/component: backend
@@ -22,8 +23,8 @@ spec:
         image: mongo:4.2
         volumeMounts:
         - mountPath: /data/db
-          name: mongo-data
+          name: mongo-hp
       volumes:
-        - name: mongo-data
+        - name: mongo-hp
           persistentVolumeClaim:
-            claimName: mongohp-pvc
+            claimName: mongo-pvc-hp
