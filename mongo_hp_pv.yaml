@@ -7,7 +7,7 @@ spec:
   capacity: 
     storage: 4Gi
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /tmp/mongodb
